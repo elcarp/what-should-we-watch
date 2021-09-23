@@ -30,16 +30,11 @@ function App() {
 				<h1>What should we watch?</h1>
 				<div>Here's what we can agree on:</div>
 				<div>
-					{data && <Table data={data} />}
-
-					{/* {data &&
-						data.map((records) => {
-							return (
-								<ul>
-									<li>{data[0].fields.Title}</li>
-								</ul>
-							)
-						})} */}
+					{data && (
+						<div className='wrapper flex'>
+							<Table data={data} />
+						</div>
+					)}
 				</div>
 			</header>
 		</div>
