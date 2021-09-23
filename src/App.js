@@ -1,17 +1,27 @@
 import './App.css'
 import Airtable from 'airtable'
+import axios from 'axios'
+import useData from './useData'
+import { useEffect } from 'react'
 
-require('dotenv').config()
-
-var Airtable = require('airtable')
-var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
-	process.env.AIRTABLE_BASE_ID
+new Airtable({ apiKey: `${process.env.REACT_APP_AIRTABLE_API_KEY}` }).base(
+	process.env.REACT_APP_AIRTABLE_BASE_ID
 )
-const table = base(process.env.AIRTABLE_TABLE_NAME)
-
-module.exports = { table }
+axios.defaults.baseURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/lise/`
+axios.defaults.headers.post['Content-Type'] = 'application/json'
+axios.defaults.headers[
+	'Authorization'
+] = `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`
 
 function App() {
+	const { data, getData } = useData()
+	useEffect(() => {
+		async function onPageLoad() {
+			await getData()
+		}
+		onPageLoad()
+	}, [])
+
 	return (
 		<div className='App'>
 			<header className='App-header'>
