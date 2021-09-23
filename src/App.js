@@ -3,6 +3,7 @@ import Airtable from 'airtable'
 import axios from 'axios'
 import useData from './useData'
 import { useEffect } from 'react'
+import Table from './table'
 
 new Airtable({ apiKey: `${process.env.REACT_APP_AIRTABLE_API_KEY}` }).base(
 	process.env.REACT_APP_AIRTABLE_BASE_ID
@@ -22,12 +23,24 @@ function App() {
 		onPageLoad()
 	}, [])
 
+	// console.log(data && fields, 'fields?')
 	return (
 		<div className='App'>
 			<header className='App-header'>
 				<h1>What should we watch?</h1>
 				<div>Here's what we can agree on:</div>
-				<div></div>
+				<div>
+					{data && <Table data={data} />}
+
+					{/* {data &&
+						data.map((records) => {
+							return (
+								<ul>
+									<li>{data[0].fields.Title}</li>
+								</ul>
+							)
+						})} */}
+				</div>
 			</header>
 		</div>
 	)
