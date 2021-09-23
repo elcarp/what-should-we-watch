@@ -50,7 +50,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 1rem;
   padding: 2rem;
+  background: #fff;
+  color: #282c34;
 }
 
 .inner-wrap span {
