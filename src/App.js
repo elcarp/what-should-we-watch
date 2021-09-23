@@ -28,7 +28,7 @@ function App() {
 		<div className='App'>
 			<header className='App-header'>
 				<h1>What should we watch?</h1>
-				<div>Here's what we can agree on:</div>
+				<div>Here's what we agree on:</div>
 				<div>
 					{data && (
 						<div className='wrapper flex'>

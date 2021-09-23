@@ -32,7 +32,33 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.wrapper.flex {
+  display: flex;
+  padding: 2rem;
+}
+
+.movieWrapper.block {
+  margin: 1rem;
+  border: 1px solid #fff;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.inner-wrap span {
+  display: block;
+  margin: .25rem;
+  font-size: 1.2rem;
+}
+
+h3 {
+  margin: 0;
 }

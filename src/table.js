@@ -18,7 +18,12 @@ const Table = ({ data }) => {
 				return (
 					<>
 						<div className='movieWrapper block'>
-							<span className='title'>{watchList.workingTitle}</span>
+							<div className='inner-wrap'>
+								<h3 id='title'>{watchList.workingTitle}</h3>
+								<span id='rating'>{watchList.imdbRating}</span>
+								<span id='rating'>{watchList.runTime} min</span>
+								<span id='rating'>{watchList.titleType}</span>
+							</div>
 						</div>
 					</>
 				)
