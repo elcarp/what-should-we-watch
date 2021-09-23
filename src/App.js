@@ -8,7 +8,8 @@ import Table from './table'
 new Airtable({ apiKey: `${process.env.REACT_APP_AIRTABLE_API_KEY}` }).base(
 	process.env.REACT_APP_AIRTABLE_BASE_ID
 )
-axios.defaults.baseURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/lise/`
+let tableName = 'junction'
+axios.defaults.baseURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${tableName}/`
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 axios.defaults.headers[
 	'Authorization'
@@ -23,7 +24,6 @@ function App() {
 		onPageLoad()
 	}, [])
 
-	// console.log(data && fields, 'fields?')
 	return (
 		<div className='App'>
 			<header className='App-header'>
