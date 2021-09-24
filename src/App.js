@@ -27,7 +27,7 @@ function App() {
 	return (
 		<div className='App'>
 			<header className='App-header'>
-				<h1>What should we watch?</h1>
+				<h1>What should Lise & Paul watch?</h1>
 				<div>Here's what we agree on:</div>
 				<div>
 					{data && (

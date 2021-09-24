@@ -20,7 +20,9 @@ const Table = ({ data }) => {
 						<div className='movieWrapper block'>
 							<div className='inner-wrap'>
 								<h3 id='title'>{watchList.workingTitle}</h3>
-								<span id='rating'>{watchList.imdbRating}</span>
+								<span id='rating'>
+									imdb rating: <strong>{watchList.imdbRating}</strong>
+								</span>
 								<span id='rating'>{watchList.runTime} min</span>
 								<span id='rating'>{watchList.titleType}</span>
 							</div>
