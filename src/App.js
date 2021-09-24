@@ -4,6 +4,7 @@ import axios from 'axios'
 import useData from './useData'
 import { useEffect } from 'react'
 import Table from './table'
+import ListMovies from './listMovies'
 
 new Airtable({ apiKey: `${process.env.REACT_APP_AIRTABLE_API_KEY}` }).base(
 	process.env.REACT_APP_AIRTABLE_BASE_ID
@@ -31,9 +32,12 @@ function App() {
 				<div>Here's what we agree on:</div>
 				<div>
 					{data && (
-						<div className='wrapper flex'>
-							<Table data={data} />
-						</div>
+						<>
+							<div className='wrapper flex'>
+								<Table data={data} />
+							</div>
+							<ListMovies data={data} />
+						</>
 					)}
 				</div>
 			</header>

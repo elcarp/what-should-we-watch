@@ -65,3 +65,8 @@
 h3 {
   margin: 0;
 }
+
+a.movie-card,
+a.movie-list {
+  text-decoration: none;
+}
