@@ -2,6 +2,8 @@ import React from 'react'
 
 const Table = ({ data }) => {
 	const fields = data.map((watchList) => {
+		// console.log(watchList.fields.genres, 'genres?	')
+
 		return watchList.fields
 	})
 
@@ -11,7 +13,6 @@ const Table = ({ data }) => {
 			({ workingTitle, workingTitlePaul }) =>
 				workingTitle[0] == workingTitlePaul[0]
 		)
-
 	return (
 		<>
 			{newData.map((watchList) => {
@@ -25,6 +26,7 @@ const Table = ({ data }) => {
 								</span>
 								<span id='rating'>{watchList.runTime} min</span>
 								<span id='rating'>{watchList.titleType}</span>
+								<span id='genre'>{watchList.genres}</span>
 							</div>
 						</div>
 					</>
