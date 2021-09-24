@@ -36,7 +36,15 @@ function App() {
 							<div className='wrapper flex'>
 								<Table data={data} />
 							</div>
-							<ListMovies data={data} />
+							<div className='flex'>
+								<div>
+									<h3>Lise's List</h3>
+									<ListMovies data={data} />
+								</div>
+							</div>
+							<div>
+								<h3>Paul's List</h3>
+							</div>
 						</>
 					)}
 				</div>
